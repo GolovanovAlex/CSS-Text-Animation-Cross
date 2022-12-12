@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 * {
   padding: 0;
@@ -30,16 +30,23 @@ body {
   display: flex;
   width: calc(100% + 400px);
   left: -400px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+  transform: rotate(calc(var(--d) * 1deg)) translateY(calc(var(--y) * 1px));
 }
 .scroll div {
   background-color: #e9c804;
   color: #1d1104;
   font-size: 3em;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   white-space: nowrap;
   animation: textanimation 60s linear infinite;
   animation-delay: -60s;
+}
+.scroll div:nth-child(2) {
+  animation: textanimation-two 60s linear infinite;
+  animation-delay: -30s;
 }
 
 @keyframes textanimation {
@@ -50,14 +57,12 @@ body {
     transform: translateX(-100%);
   }
 }
-.scroll div:nth-child(2) {
-  animation: textanimation-two 60s linear infinite;
-}
+
 @keyframes textanimation-two {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(200%);
+    transform: translateX(-200%);
   }
 }
